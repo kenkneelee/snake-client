@@ -7,9 +7,14 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+  conn.on("data", () => {
+    console.log("you ded cuz you idled")
+  })
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
-    conn.write("Name: KEN")
+    conn.write("Name: KEN");
+    // setTimeout(()=> {conn.write("Move: up"), 50})
+    // setInterval(()=> {conn.write("Move: up")}, 50);
   });
   return conn;
 };
