@@ -1,21 +1,7 @@
+const {moveInputs, messageInputs} = require (`./constants`);
+
 // Stores the active TCP connection object.
 let connection;
-
-// declare object with valid keypresses and their commands
-const validInputs = {
-  w: "Move: up",
-  a: "Move: left",
-  s: "Move: down",
-  d: "Move: right",
-};
-
-const messageInputs = {
-  q: "Gnarly!",
-  e: "Nice!",
-  f: "Funny!",
-  g: "Good game!",
-  h: "Hisssssss",
-};
 
 // setup interface to handle user input from stdin
 const setupInput = function (conn) {
@@ -36,13 +22,13 @@ const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
   }
-  // loop through all valid keypresses
-  for (const input in validInputs) {
+  // loop through all valid movement keypresses
+  for (const input in moveInputs) {
     // toLowerCase to account for capslock
     // check if keypress is a valid one
     if (key.toLowerCase() === input) {
       // send respective move command to connection object
-      connection.write(validInputs[key.toLowerCase()]);
+      connection.write(`Move: ${moveInputs[key.toLowerCase()]}`);
     }
   }
   for (const input in messageInputs) {
