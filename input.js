@@ -1,4 +1,4 @@
-const {moveInputs, messageInputs} = require (`./constants`);
+const { moveInputs, messageInputs } = require(`./constants`);
 
 // Stores the active TCP connection object.
 let connection;
@@ -25,14 +25,18 @@ const handleUserInput = function (key) {
   // loop through all valid movement keypresses
   for (const input in moveInputs) {
     // toLowerCase to account for capslock
-    // check if keypress is a valid one
+    // check if keypress is a valid movement input
     if (key.toLowerCase() === input) {
       // send respective move command to connection object
       connection.write(`Move: ${moveInputs[key.toLowerCase()]}`);
     }
   }
+  // loop through all valid message keypresses
   for (const input in messageInputs) {
+    // toLowerCase to account for capslock
+    // check if keypress is a valid message input
     if (key.toLowerCase() === input) {
+      // issue 'Say:' command to server to send respective message
       connection.write(`Say: ${messageInputs[key.toLowerCase()]}`);
     }
   }
