@@ -4,7 +4,7 @@ const { moveInputs, messageInputs } = require(`./constants`);
 let connection;
 
 // setup interface to handle user input from stdin
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   // Store the connection object into top scoped variable
   connection = conn;
   const stdin = process.stdin;
@@ -17,7 +17,7 @@ const setupInput = function (conn) {
 };
 
 // callback function to run for every keypress
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   // exit process if ctrl+c detected
   if (key === "\u0003") {
     process.exit();
