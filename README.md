@@ -8,14 +8,18 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["Start screen."](images/snakestart.png)
+*The start screen.*
+
+!["A successful game of snake."](images/snake.png)
+*A game well underway!*
 
 ## Getting Started
 
-- Follow steps inside the snek server repo to run the server side
+- Follow steps inside the snek server repo to run the server side.
 - (Optional) Change the "playerName" variable in constants.js to your own 3-letter initial.
 - Run the development snake client using the `node play.js` command.
+- Play! Use the node terminal as your input. Refer to controls below.
 
 ## Controls
 
@@ -35,6 +39,8 @@ Note: The snake can not make a turn in the opposite direction of its current fac
 ### Messages
 
 This snake client comes with several pre-programmed messages that will be displayed to other connected players. Press the respective key to display the message above the player's snake.
+
+!["Player snake saying "Hisssssss."](images/message.png)
 
 | Key |    Action    |
 | :-: | :----------: |
