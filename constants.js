@@ -1,7 +1,10 @@
 // ---client.js---
-const IP = "192.168.2.34";
+// store connection information
+const IP = "localhost";
 const PORT = "50541";
+// store user information
 const playerName = "KEN";
+// store customizable death message
 const deathMessage = "u ded";
 
 

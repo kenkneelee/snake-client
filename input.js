@@ -1,3 +1,4 @@
+// Import lists of valid inputs for movement and messages
 const { moveInputs, messageInputs } = require(`./constants`);
 
 // Stores the active TCP connection object.
@@ -11,7 +12,7 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
-  // when stdin receives user input, run handleUserInput with keypress as param
+  // when stdin receives user input, run handleUserInput callback with keypress as param
   stdin.on("data", (key) => handleUserInput(key));
   return stdin;
 };

@@ -1,4 +1,6 @@
+// Import net module from node
 const net = require("net");
+// Import constants
 const { IP, PORT, playerName, deathMessage } = require(`./constants`);
 
 const connect = function() {
@@ -11,7 +13,7 @@ const connect = function() {
   conn.setEncoding("utf8");
   // on connection, show client success message and send player name to server
   conn.on("connect", () => {
-    process.stdout.write("Successfully connected to game server\n");
+    process.stdout.write(`Successfully connected to game server.\nWelcome, ${playerName}!\n`);
     conn.write(`Name: ${playerName}`);
   });
   // death handling (idle or loss).
