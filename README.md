@@ -9,9 +9,11 @@ Before you can run this client, you will need to be running the server side whic
 ## Final Product
 
 !["Start screen."](images/snakestart.png)
+
 *The start screen.*
 
 !["A successful game of snake."](images/snake.png)
+
 *A game well underway!*
 
 ## Getting Started
