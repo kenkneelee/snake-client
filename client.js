@@ -17,8 +17,9 @@ const connect = function() {
     conn.write(`Name: ${playerName}`);
   });
   // death handling (idle or loss).
-  // show client death message and stop listening for inputs
-  conn.on("data", () => {
+  // show client server's death message and custom death message and stop listening for inputs
+  conn.on("data", (data) => {
+    process.stdout.write(data);
     process.stdout.write(`${deathMessage}\n`);
     process.exit();
   });
